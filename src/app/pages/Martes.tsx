@@ -1,12 +1,21 @@
+import React from 'react';
 import { useNavigate } from 'react-router';
 import imgChatGptImage8Feb20261818141 from "figma:asset/c250046851c2fab479fadf703de683c4333e3e4d.png";
+import { LanguageSwitcher } from '../components/LanguageSwitcher';
+import { useLanguage } from '../i18n/LanguageContext';
+import { t } from '../i18n/translations';
 
 export default function Martes() {
   const navigate = useNavigate();
+  const { lang } = useLanguage();
 
   return (
     <div className="bg-[#703d4e] min-h-screen w-full flex items-start justify-center px-4 sm:px-0 overflow-x-hidden">
       <div className="relative w-full max-w-[390px] md:max-w-[800px] lg:max-w-[1000px] h-[1800px] md:h-auto md:min-h-screen mx-auto md:py-8 md:px-8">
+        {/* Language Switcher */}
+        <div className="absolute left-1/2 -translate-x-1/2 z-20 top-4 md:top-8">
+          <LanguageSwitcher variant="light" />
+        </div>
         
         {/* Desktop Layout Container */}
         <div className="hidden md:block md:grid md:grid-cols-2 md:gap-12 md:pt-20">
@@ -15,25 +24,25 @@ export default function Martes() {
             onClick={() => navigate('/')}
             className="absolute top-8 left-8 px-6 py-2 rounded-full border-2 border-white text-white font-['Inter'] font-medium text-sm uppercase tracking-wide hover:bg-white hover:text-[#703d4e] transition-all duration-300 z-10"
           >
-            inicio
+            {t('common.inicio', lang)}
           </button>
           {/* Left Column - Gimnasio Section */}
           <div className="space-y-6">
             <div className="text-center space-y-4">
               <h2 className="font-['Marcellus'] text-3xl lg:text-4xl text-white uppercase tracking-wider" style={{ textShadow: "0px 4px 4px rgba(0,0,0,0.25)" }}>
-                CLASE DE RUMBA
+                {t('martes.rumba_class', lang)}
               </h2>
               <p className="font-['Marcellus'] text-xl lg:text-2xl text-white uppercase tracking-wide" style={{ textShadow: "0px 4px 4px rgba(0,0,0,0.25)" }}>
-                BOGOTÁ
+                {t('martes.city_bogota', lang)}
               </p>
               <p className="font-['Marcellus'] text-lg lg:text-xl text-white uppercase tracking-wide" style={{ textShadow: "0px 4px 4px rgba(0,0,0,0.25)" }}>
-                MARTES 7 DE JULIO | 12:00 PM
+                {t('martes.date_noon', lang)}
               </p>
               <p className="font-['Lexend_Zetta'] text-sm lg:text-base text-white uppercase tracking-wide" style={{ textShadow: "0px 4px 4px rgba(0,0,0,0.25)" }}>
-                Club Campestre El Rancho - Gimnasio
+                {t('martes.location_gym', lang)}
               </p>
               <p className="font-['Marcellus'] text-lg lg:text-xl text-white uppercase tracking-wide pt-4" style={{ textShadow: "0px 4px 4px rgba(0,0,0,0.25)" }}>
-                R.S.V.P
+                {t('common.rsvp', lang)}
               </p>
             </div>
             <div className="flex justify-center pt-4">
@@ -44,7 +53,7 @@ export default function Martes() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                INSCRÍBETE AQUÍ
+                {t('martes.register_here', lang)}
               </a>
             </div>
           </div>
@@ -53,16 +62,16 @@ export default function Martes() {
           <div className="space-y-6">
             <div className="text-center space-y-4">
               <h2 className="font-['Marcellus'] text-3xl lg:text-4xl text-white uppercase tracking-wider" style={{ textShadow: "0px 4px 4px rgba(0,0,0,0.25)" }}>
-                Amoro's Padel Club
+                {t('martes.padel_club_title', lang)}
               </h2>
               <p className="font-['Marcellus'] text-xl lg:text-2xl text-white uppercase tracking-wide">
-                Bogotá
+                {t('martes.city_bogota', lang)}
               </p>
               <p className="font-['Marcellus'] text-lg lg:text-xl text-white uppercase tracking-wide">
-                Martes 7 de Julio | 4:00 PM
+                {t('martes.date_evening', lang)}
               </p>
               <p className="font-['Lexend_Zetta'] text-sm lg:text-base text-white uppercase tracking-wide">
-                Club Campestre El Rancho - Zona de Pádel
+                {t('martes.location_padel', lang)}
               </p>
             </div>
             <div className="flex justify-center pt-4">
@@ -73,7 +82,7 @@ export default function Martes() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                IR AL LUGAR
+                {t('common.go_to_place', lang).toUpperCase()}
               </a>
             </div>
           </div>
@@ -157,7 +166,7 @@ export default function Martes() {
               color: "#fff",
             }}
           >
-            inicio
+            {t('common.inicio', lang)}
           </span>
         </button>
 
@@ -178,7 +187,7 @@ export default function Martes() {
             textShadow: "0px 4px 4px rgba(0,0,0,0.25)",
           }}
         >
-          CLASE DE RUMBA
+          {t('martes.rumba_class', lang)}
         </div>
 
         <div
@@ -196,7 +205,7 @@ export default function Martes() {
             textShadow: "0px 4px 4px rgba(0,0,0,0.25)",
           }}
         >
-          BOGOTÁ
+          {t('martes.city_bogota', lang)}
         </div>
 
         <div
@@ -215,7 +224,7 @@ export default function Martes() {
             textShadow: "0px 4px 4px rgba(0,0,0,0.25)",
           }}
         >
-          MARTES 7 DE JULIO | 12:00 PM
+          {t('martes.date_noon', lang)}
         </div>
 
         <div
@@ -234,7 +243,7 @@ export default function Martes() {
             textShadow: "0px 4px 4px rgba(0,0,0,0.25)",
           }}
         >
-          Club Campestre El Rancho - Gimnasio
+          {t('martes.location_gym', lang)}
         </div>
 
         <div
@@ -253,7 +262,7 @@ export default function Martes() {
             textShadow: "0px 4px 4px rgba(0,0,0,0.25)",
           }}
         >
-          R.S.V.P
+          {t('common.rsvp', lang)}
         </div>
 
         {/* Button INSCRÍBETE AQUÍ (Padel registration) */}
@@ -287,7 +296,7 @@ export default function Martes() {
               color: "rgba(255,255,255,0.7)",
             }}
           >
-            INSCRÍBETE AQUÍ
+            {t('martes.register_here', lang)}
           </span>
         </a>
 
@@ -333,7 +342,7 @@ export default function Martes() {
             color: "#fff",
           }}
         >
-          Ver más
+          {t('martes.see_more', lang)}
         </div>
 
         {/* PADEL SECTION */}
@@ -353,7 +362,7 @@ export default function Martes() {
             textShadow: "0px 4px 4px rgba(0,0,0,0.25)",
           }}
         >
-          Amoro’s Padel Club
+          {t('martes.padel_club_title', lang)}
         </div>
 
         <div
@@ -370,7 +379,7 @@ export default function Martes() {
             color: "#fff",
           }}
         >
-          Bogotá
+          {t('martes.city_bogota', lang)}
         </div>
 
         <div
@@ -388,7 +397,7 @@ export default function Martes() {
             color: "#fff",
           }}
         >
-          Martes 7 de Julio | 4:00 PM
+          {t('martes.date_evening', lang)}
         </div>
 
         <div
@@ -406,7 +415,7 @@ export default function Martes() {
             color: "#fff",
           }}
         >
-          Club Campestre El Rancho - Zona de Pádel
+          {t('martes.location_padel', lang)}
         </div>
 
         {/* Second IR AL LUGAR button (Padel) */}
@@ -440,7 +449,7 @@ export default function Martes() {
               color: "rgba(255,255,255,0.7)",
             }}
           >
-            IR AL LUGAR
+            {t('common.go_to_place', lang).toUpperCase()}
           </span>
         </a>
         </div>

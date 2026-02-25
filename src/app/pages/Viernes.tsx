@@ -1,9 +1,14 @@
+import React from 'react';
 import { useNavigate } from 'react-router';
 import imgChatGptImage7Feb20262015012 from "figma:asset/4ac89ba9da89237739c75c794c9238e066062519.png";
 import imgChatGptImage7Feb20262007013 from "figma:asset/7f28c756803ad49659645024dee4cc64b80c4ac0.png";
+import { LanguageSwitcher } from '../components/LanguageSwitcher';
+import { useLanguage } from '../i18n/LanguageContext';
+import { t } from '../i18n/translations';
 
 export default function Viernes() {
   const navigate = useNavigate();
+  const { lang } = useLanguage();
 
   return (
     <div
@@ -18,6 +23,10 @@ export default function Viernes() {
       }}
     >
       <div className="relative w-full max-w-[393px]" style={{ minHeight: "1700px" }}>
+        {/* Language Switcher */}
+        <div className="absolute top-4 right-4 z-20">
+          <LanguageSwitcher />
+        </div>
         {/* Background Images */}
         <div
           className="absolute"
@@ -82,7 +91,7 @@ export default function Viernes() {
           }}
         >
           <p className="font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic text-[14px] text-center text-[#717070] tracking-[0.6px] uppercase">
-            inicio
+            {t('common.inicio', lang)}
           </p>
         </button>
 
@@ -105,7 +114,7 @@ export default function Viernes() {
             color: "#717070",
           }}
         >
-          taller de cocina
+          {t('viernes.cooking_workshop', lang)}
         </p>
 
         <p
@@ -126,7 +135,7 @@ export default function Viernes() {
             color: "#717070",
           }}
         >
-          VIERNES 10 de julio| 11:00 aM
+          {t('viernes.friday_date_morning', lang)}
         </p>
 
         <p
@@ -147,7 +156,7 @@ export default function Viernes() {
             color: "#717070",
           }}
         >
-          SOFITEL BARÚ CARTAGENA BEACH RESORT
+          {t('viernes.sofitel_barú', lang)}
         </p>
 
         <p
@@ -168,7 +177,7 @@ export default function Viernes() {
             color: "#717070",
           }}
         >
-          restaurante cALABLANCA
+          {t('viernes.calablanca_restaurant', lang)}
         </p>
 
         <p
@@ -189,7 +198,7 @@ export default function Viernes() {
             color: "#717070",
           }}
         >
-          R.S.V.P.
+          {t('common.rsvp', lang)}
         </p>
 
         {/* ver más link */}
@@ -213,7 +222,7 @@ export default function Viernes() {
             whiteSpace: "nowrap",
           }}
         >
-          ver más
+          {t('martes.see_more', lang)}
         </button>
 
         {/* Second \"inicio\" Button */}
@@ -229,7 +238,7 @@ export default function Viernes() {
           }}
         >
           <p className="font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic text-[14px] text-center text-[#717070] tracking-[0.6px] uppercase">
-            inicio
+            {t('common.inicio', lang)}
           </p>
         </button>
 
@@ -252,7 +261,7 @@ export default function Viernes() {
             color: "#717070",
           }}
         >
-          coctél de bienvenida
+          {t('viernes.welcome_cocktail', lang)}
         </p>
 
         <p
@@ -273,7 +282,7 @@ export default function Viernes() {
             color: "#717070",
           }}
         >
-          VIERNES 10 de julio| 8:00 PM
+          {t('viernes.friday_date_evening', lang)}
         </p>
 
         <p
@@ -294,7 +303,7 @@ export default function Viernes() {
             color: "#717070",
           }}
         >
-          SOFITEL BARÚ CARTAGENA BEACH RESORT
+          {t('viernes.sofitel_barú', lang)}
         </p>
 
         <p
@@ -315,7 +324,7 @@ export default function Viernes() {
             color: "#717070",
           }}
         >
-          bar la pÉrgola
+          {t('viernes.la_pergola_bar', lang)}
         </p>
 
         {/* Bottom \"ir al lugar\" Button */}
@@ -336,7 +345,7 @@ export default function Viernes() {
         >
           <div className="flex items-center justify-center h-full">
             <p className="font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic text-[12px] text-center text-[#717070] tracking-[0.6px] uppercase">
-              ir al lugar
+              {t('common.go_to_place', lang)}
             </p>
           </div>
         </a>

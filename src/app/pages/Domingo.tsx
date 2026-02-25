@@ -1,6 +1,10 @@
+import React from 'react';
 import { useNavigate } from 'react-router';
 import svgPaths from "../../imports/svg-6ik3w4qarz";
 import imgChatGptImage7Feb20262011332 from "figma:asset/029be0e6109999263a78b56bc4501195fc372211.png";
+import { LanguageSwitcher } from '../components/LanguageSwitcher';
+import { useLanguage } from '../i18n/LanguageContext';
+import { t } from '../i18n/translations';
 
 function Icon() {
   return (
@@ -38,6 +42,7 @@ function Icon() {
 
 export default function Domingo() {
   const navigate = useNavigate();
+  const { lang } = useLanguage();
 
   return (
     <div
@@ -60,6 +65,10 @@ export default function Domingo() {
         }}
       />
       <div className="relative w-full max-w-[393px] z-10">
+        {/* Language Switcher */}
+        <div className="absolute top-4 right-4 z-30">
+          <LanguageSwitcher />
+        </div>
         {/* Background Icon inside content frame */}
         <div className="absolute right-0 top-0 w-[128px] h-[852px] opacity-60 pointer-events-none">
           <Icon />
@@ -72,7 +81,7 @@ export default function Domingo() {
             onClick={() => navigate('/')}
             className="absolute px-6 py-2 bg-transparent border-2 border-[#717070] rounded-full text-[#717070] font-['Inter:Medium',sans-serif] text-[12px] tracking-[0.6px] uppercase cursor-pointer hover:bg-[#717070] hover:text-white transition-colors left-4 top-4"
           >
-            inicio
+            {t('common.inicio', lang)}
           </button>
 
           {/* tarde en la playa */}
@@ -93,7 +102,7 @@ export default function Domingo() {
               color: "#717070",
             }}
           >
-            tarde en la playa
+            {t('domingo.afternoon_at_beach', lang)}
           </p>
 
           {/* domingo 12 de julio 3-6 pm */}
@@ -114,8 +123,8 @@ export default function Domingo() {
               color: "#717070",
             }}
           >
-            <p className="mb-0">domingo 12 de julio</p>
-            <p className="mb-0">3-6 pm</p>
+            <p className="mb-0">{t('domingo.date', lang)}</p>
+            <p className="mb-0">{t('domingo.time_range', lang)}</p>
           </div>
 
           {/* SOFITEL BARÚ cartagena BEACH RESORT */}
@@ -136,8 +145,8 @@ export default function Domingo() {
               color: "#717070",
             }}
           >
-            <p className="mb-0">SOFITEL BARÚ</p>
-            <p className="mb-0">cartagena BEACH RESORT</p>
+            <p className="mb-0">{t('domingo.sofitel_baru', lang).split(' ').slice(0, 2).join(' ')}</p>
+            <p className="mb-0">{t('domingo.sofitel_baru', lang).split(' ').slice(2).join(' ')}</p>
           </div>
 
           {/* r.s.v.p. */}
@@ -158,7 +167,7 @@ export default function Domingo() {
               color: "#717070",
             }}
           >
-            r.s.v.p.
+            {t('common.rsvp', lang)}
           </p>
         </div>
       </div>

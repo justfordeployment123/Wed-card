@@ -1,8 +1,12 @@
+import React from 'react';
 import { useNavigate } from 'react-router';
 import svgPaths from "../../imports/svg-y7tj7flg0i";
 import imgImage2 from "figma:asset/27251f39d0450f1a4433b94d3242e8bdd4c78901.png";
 import imgScreenshot20260130At114747Pm1 from "figma:asset/83aca85b03199dd2bedb67b7c830ed52b44731ae.png";
 import imgScreenshot20260131At120634Am3 from "figma:asset/927db6088308ea87495ef7b202eeecb069579be0.png";
+import { LanguageSwitcher } from '../components/LanguageSwitcher';
+import { useLanguage } from '../i18n/LanguageContext';
+import { t } from '../i18n/translations';
 
 function Group() {
   return (
@@ -42,6 +46,7 @@ function Group() {
 
 export default function Sabado() {
   const navigate = useNavigate();
+  const { lang } = useLanguage();
 
   return (
     <div
@@ -55,6 +60,10 @@ export default function Sabado() {
       }}
     >
       <div className="relative w-[393px] mx-auto -mt-6 md:-mt-10 origin-top md:scale-[1.2] lg:scale-[1.5]" data-name="iPhone 16 - 58">
+        {/* Language Switcher */}
+        <div className="absolute top-4 right-4 z-20">
+          <LanguageSwitcher />
+        </div>
         {/* Mail icon card */}
         <div
           className="absolute flex h-[183.7px] items-center justify-center right-[10px] top-[90px] w-[276.987px]"
@@ -98,7 +107,7 @@ export default function Sabado() {
         className="absolute h-[17px] leading-[19px] left-[70px] not-italic text-[#5d5d5d] text-[14px] text-center top-[244px] w-[158px] whitespace-pre-wrap"
         style={{ fontFamily: "Parisienne" }}
       >
-        {`Con la bendición de Dios y en compañía de nuestros padres `}
+        {t('sabado.blessing_intro', lang)}
       </p>
 
       <div
@@ -113,14 +122,14 @@ export default function Sabado() {
         className="absolute h-[20px] leading-[19px] left-[57px] not-italic text-[#5d5d5d] text-[14px] text-center top-[365px] w-[188px] whitespace-pre-wrap"
         style={{ fontFamily: "Parisienne" }}
       >
-        Tenemos el gusto de invitarlos a nuestro matrimonio.
+        {t('sabado.invitation_text', lang)}
       </p>
 
       <p
         className="absolute h-[14px] leading-[11px] left-[79px] not-italic text-[#5d5d5d] text-[11px] text-center top-[459px] w-[139px] whitespace-pre-wrap"
         style={{ fontFamily: "Bacasime Antique" }}
       >
-        {` Barú, Colombia`}
+        {t('sabado.location_baru', lang)}
       </p>
 
       <p
@@ -133,21 +142,21 @@ export default function Sabado() {
           fontFamily: "Parisienne",
         }}
       >
-        Nataly &amp; David
+        {t('sabado.names_nataly_david', lang)}
       </p>
 
       <p
         className="absolute leading-[12px] left-[70px] not-italic text-[#5d5d5d] text-[12px] text-center top-[418px] w-[153px] whitespace-pre-wrap"
         style={{ fontFamily: "Bacasime Antique" }}
       >
-        SÁBADO | 11 de Julio | 2026
+        {t('sabado.date_main', lang)}
       </p>
 
       <p
         className="absolute leading-[12px] left-[128px] not-italic text-[#5d5d5d] text-[12px] top-[432px]"
         style={{ fontFamily: "Bacasime Antique" }}
       >
-        {`4:00 P.M `}
+        {t('sabado.time_main', lang)}
       </p>
 
       <div
@@ -224,24 +233,24 @@ export default function Sabado() {
         className="absolute h-[22px] leading-[11px] left-[53px] not-italic text-[#5d5d5d] text-[11px] top-[550px] w-[168px] whitespace-pre-wrap"
         style={{ fontFamily: "Bacasime Antique" }}
       >
-        <p className="mb-0">DRESS CODE</p>
+        <p className="mb-0">{t('sabado.dress_code_title', lang)}</p>
       </div>
 
       <div
         className="absolute leading-[11px] left-[53px] not-italic text-[#5d5d5d] text-[11px] top-[571px] w-[93px] whitespace-pre-wrap"
         style={{ fontFamily: "Bacasime Antique" }}
       >
-        <p className="mb-0">{`MUJERES: `}</p>
-        <p className="mb-0">{`Vestido largo unicolor `}</p>
+        <p className="mb-0">{t('sabado.dress_code_women_label', lang)}</p>
+        <p className="mb-0">{t('sabado.dress_code_women_long_dress', lang)}</p>
         <p className="mb-0">&nbsp;</p>
         <p className="mb-0">
-          {`Colores reservados: `}
+          {t('sabado.dress_code_women_reserved_colors', lang)}
           <br aria-hidden="true" />
-          {`Blanco `}
+          {t('sabado.dress_code_women_white', lang)}
           <br aria-hidden="true" />
-          {`Plateado `}
+          {t('sabado.dress_code_women_silver', lang)}
           <br aria-hidden="true" />
-          Negro
+          {t('sabado.dress_code_women_black', lang)}
         </p>
         <p className="mb-0">&nbsp;</p>
         <p>&nbsp;</p>
@@ -251,15 +260,15 @@ export default function Sabado() {
         className="absolute leading-[11px] left-[53px] not-italic text-[#5d5d5d] text-[11px] text-right top-[694px] w-[93px] whitespace-pre-wrap"
         style={{ fontFamily: "Bacasime Antique" }}
       >
-        <p className="mb-0">{`HOMBRES: `}</p>
-        <p className="mb-0">Traje completo con pañuelo</p>
+        <p className="mb-0">{t('sabado.dress_code_men_label', lang)}</p>
+        <p className="mb-0">{t('sabado.dress_code_men_suit', lang)}</p>
         <p className="mb-0">&nbsp;</p>
         <p className="mb-0">
-          Colores reservados:
+          {t('sabado.dress_code_men_reserved_colors', lang)}
           <br aria-hidden="true" />
-          Beige claro
+          {t('sabado.dress_code_men_light_beige', lang)}
         </p>
-        <p>Negro</p>
+        <p>{t('sabado.dress_code_men_black', lang)}</p>
       </div>
 
       <div className="absolute h-[177px] left-[246px] top-[358px] w-[127px]">
@@ -295,16 +304,19 @@ export default function Sabado() {
         className="absolute h-[28px] leading-[12px] left-[267px] not-italic text-[#5d5d5d] text-[12px] top-[388px] w-[81px] whitespace-pre-wrap"
         style={{ fontFamily: "Bacasime Antique" }}
       >
-        CEREMONIA
-        <br />
-        Y RECEPCIÓN
+        {t('sabado.ceremony_reception', lang).split(/\s+&\s+/).map((part, i) => (
+          <React.Fragment key={i}>
+            {part}
+            {i === 0 && <br />}
+          </React.Fragment>
+        ))}
       </p>
 
       <p
         className="absolute h-[12px] leading-[14px] left-[259px] not-italic text-[#5d5d5d] text-[14px] text-center top-[423px] w-[97px] whitespace-pre-wrap"
         style={{ fontFamily: "Bacasime Antique" }}
       >
-        Sofitel Barú Cartagena Beach Resort
+        {t('sabado.ceremony_location', lang)}
       </p>
 
       <a className="absolute block border-2 border-solid border-white box-border cursor-pointer h-[23px] left-[265px] rounded-[11184800px] top-[475px] w-[90px] z-10" data-name="Button" href="https://www.google.com/maps/place/Sofitel+Baru+Cartagena/@10.2564149,-75.6103647,17z/data=!4m9!3m8!1s0x8e5883d929db1779:0xb729400f764e142f!5m2!4m1!1i2!8m2!3d10.2564149!4d-75.6077898!16s%2Fg%2F11p012fp8j!5m1!1e4?entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
@@ -320,7 +332,7 @@ export default function Sabado() {
             whiteSpace: "nowrap",
           }}
         >
-          ir al lugar
+          {t('common.go_to_place', lang)}
         </p>
       </a>
 
@@ -337,7 +349,7 @@ export default function Sabado() {
             whiteSpace: "nowrap",
           }}
         >
-          VER INSPO
+          {t('common.view_inspo', lang)}
         </p>
       </a>
 
@@ -354,7 +366,7 @@ export default function Sabado() {
             whiteSpace: "nowrap",
           }}
         >
-          VER INSPO
+          {t('common.view_inspo', lang)}
         </p>
       </a>
 
@@ -364,7 +376,7 @@ export default function Sabado() {
         data-name="Button"
       >
         <div className="absolute content-stretch flex items-center justify-center left-[11px] p-[10px] top-[-2px]">
-          <p className="font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[#b7ab99] text-[14px] text-center tracking-[0.6px] uppercase">inicio</p>
+          <p className="font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic relative shrink-0 text-[#b7ab99] text-[14px] text-center tracking-[0.6px] uppercase">{t('common.inicio', lang)}</p>
         </div>
       </button>
 
@@ -393,7 +405,7 @@ export default function Sabado() {
             color: "#5D5D5D",
           }}
         >
-          R . S . V . P
+          {t('sabado.rsvp_title', lang)}
         </p>
         <p
           className="mb-0 text-right"
@@ -405,7 +417,7 @@ export default function Sabado() {
             color: "#5D5D5D",
           }}
         >
-          antes del 24 de abril.
+          {t('sabado.rsvp_before', lang)}
         </p>
         <p
           className="mb-0 text-right"
@@ -417,7 +429,7 @@ export default function Sabado() {
             color: "#5D5D5D",
           }}
         >
-          +57 3134423895
+          {t('sabado.rsvp_phone', lang)}
         </p>
         <p
           className="mb-0 text-right"
@@ -429,7 +441,7 @@ export default function Sabado() {
             color: "#5D5D5D",
           }}
         >
-          Lluvia de sobres
+          {t('sabado.rsvp_rain_of_envelopes', lang)}
         </p>
       </div>
 
@@ -447,7 +459,7 @@ export default function Sabado() {
           color: "#5D5D5D",
         }}
       >
-        {`TRANSPORTE INCLUIDO `}
+        {t('sabado.transport_title', lang)}
       </p>
 
       <div
@@ -465,12 +477,12 @@ export default function Sabado() {
         }}
       >
         <p className="mb-0">
-          Desde:
+          {t('common.from', lang)}
           <br aria-hidden="true" />
-          Hotel Osh Hotel Cartagena
+          {t('sabado.transport_from_osh', lang).replace('Desde: ', '')}
         </p>
-        <p className="mb-0">Hacia:</p>
-        <p className="mb-0">Sofitel Barú Cartagena</p>
+        <p className="mb-0">{t('common.to', lang)}</p>
+        <p className="mb-0">{t('sabado.transport_to_sofitel', lang).replace('Hacia: ', '')}</p>
       </div>
       </div>
     </div>

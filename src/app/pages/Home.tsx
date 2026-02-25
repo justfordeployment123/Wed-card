@@ -1,12 +1,21 @@
+import React from 'react';
 import { useNavigate } from 'react-router';
 import imgScreenshot20260130At81615Pm1 from "figma:asset/f74998135538d1e201edcdd431ab6a90bfe63f4b.png";
+import { LanguageSwitcher } from '../components/LanguageSwitcher';
+import { useLanguage } from '../i18n/LanguageContext';
+import { t } from '../i18n/translations';
 
 export default function Home() {
   const navigate = useNavigate();
+  const { lang } = useLanguage();
 
   return (
     <div className="bg-[#d4cfc4] min-h-screen w-full flex items-center justify-center px-4 sm:px-0" data-name="iPhone 16 - 59">
       <div className="relative w-full max-w-[393px] flex flex-col items-center py-20 space-y-8">
+        {/* Language Switcher */}
+        <div className="absolute top-4 right-4 z-20">
+          <LanguageSwitcher />
+        </div>
         {/* Logo/Monogram */}
         <div className="w-[284px] max-w-full h-[200px]">
           <img
@@ -24,7 +33,7 @@ export default function Home() {
             textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
           }}
         >
-          NATALY + DAVID
+          {t('home.names', lang)}
         </p>
 
         {/* Day Selection Buttons */}
@@ -41,7 +50,7 @@ export default function Home() {
                 backgroundColor: '#d4cfc4',
               }}
             >
-              <p className="font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic text-[#7b7468] text-[12px] text-center tracking-[0.6px] uppercase">martes</p>
+              <p className="font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic text-[#7b7468] text-[12px] text-center tracking-[0.6px] uppercase">{t('home.day.tuesday', lang)}</p>
             </button>
 
             <button
@@ -55,7 +64,7 @@ export default function Home() {
                 backgroundColor: '#d4cfc4',
               }}
             >
-              <p className="font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic text-[#7b7468] text-[12px] text-center tracking-[0.6px] uppercase">viernes</p>
+              <p className="font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic text-[#7b7468] text-[12px] text-center tracking-[0.6px] uppercase">{t('home.day.friday', lang)}</p>
             </button>
 
             <button
@@ -69,7 +78,7 @@ export default function Home() {
                 backgroundColor: '#d4cfc4',
               }}
             >
-              <p className="font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic text-[#7b7468] text-[12px] text-center tracking-[0.6px] uppercase">SÁBADO</p>
+              <p className="font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic text-[#7b7468] text-[12px] text-center tracking-[0.6px] uppercase">{t('home.day.saturday', lang)}</p>
             </button>
 
             <button
@@ -83,7 +92,7 @@ export default function Home() {
                 backgroundColor: '#d4cfc4',
               }}
             >
-              <p className="font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic text-[#7b7468] text-[12px] text-center tracking-[0.6px] uppercase">DOMINGO</p>
+              <p className="font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic text-[#7b7468] text-[12px] text-center tracking-[0.6px] uppercase">{t('home.day.sunday', lang)}</p>
             </button>
           </div>
         </div>
@@ -103,7 +112,7 @@ export default function Home() {
           }}
         >
           <p className="font-['Inter:Medium',sans-serif] font-medium leading-[16px] not-italic text-[#7b7468] text-[12px] text-center tracking-[0.6px] uppercase">
-            + INFO
+            {t('home.more_info', lang)}
           </p>
         </button>
       </div>

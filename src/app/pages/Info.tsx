@@ -1,5 +1,9 @@
+import React from 'react';
 import { useNavigate } from 'react-router';
 import svgPaths from "../../imports/svg-re7w63dzsq";
+import { LanguageSwitcher } from '../components/LanguageSwitcher';
+import { useLanguage } from '../i18n/LanguageContext';
+import { t } from '../i18n/translations';
 
 function Icon() {
   return (
@@ -25,10 +29,15 @@ function Icon() {
 
 export default function Info() {
   const navigate = useNavigate();
+  const { lang } = useLanguage();
 
   return (
     <div className="bg-[#f5f4f0] w-full" data-name="iPhone 16 - 62">
       <div className="relative mx-auto w-full max-w-[393px] sm:max-w-[420px] min-h-screen pb-8 px-4 sm:px-6">
+        {/* Language Switcher */}
+        <div className="absolute top-4 right-4 z-30">
+          <LanguageSwitcher />
+        </div>
         {/* Decorative Icon */}
         <div className="absolute right-0 top-0 w-[128px] h-[852px] opacity-60 pointer-events-none">
           <Icon />
@@ -40,51 +49,49 @@ export default function Info() {
             onClick={() => navigate('/')}
             className="px-6 py-2 bg-transparent border-2 border-[#717070] rounded-full text-[#717070] font-['Inter:Medium',sans-serif] text-[12px] tracking-[0.6px] uppercase cursor-pointer hover:bg-[#717070] hover:text-white transition-colors mb-8"
           >
-            inicio
+            {t('common.inicio', lang)}
           </button>
 
           <div className="mt-6 space-y-6">
             <p className="font-['Marcellus:Regular',sans-serif] leading-[16px] not-italic text-[#717070] text-[18px] tracking-[0.6px] uppercase">
-              hoteles recomendados:
+              {t('info.recommended_hotels', lang)}
             </p>
 
             <div className="font-['Marcellus:Regular',sans-serif] leading-[16px] text-[#717070] tracking-[0.6px] space-y-4">
               <div>
-                <p className="text-[16px] uppercase mb-2">bogotá:</p>
+                <p className="text-[16px] uppercase mb-2">{t('info.city.bogota', lang)}</p>
                 <ul className="list-disc pl-6 space-y-1">
-                  <li className="text-[14px]">hotel w bogotá</li>
-                  <li className="text-[14px]">Wynwood house 109</li>
+                  <li className="text-[14px]">{t('info.hotel.w_bogota', lang)}</li>
+                  <li className="text-[14px]">{t('info.hotel.wynwood_109', lang)}</li>
                 </ul>
               </div>
 
               <div>
-                <p className="text-[16px] uppercase mb-2">Cartagena:</p>
+                <p className="text-[16px] uppercase mb-2">{t('info.city.cartagena', lang)}</p>
                 <ul className="list-disc pl-6 space-y-1">
-                  <li className="text-[14px]">osh hotel cartagena</li>
-                  <li className="text-[14px]">casa carolina hotel</li>
-                  <li className="text-[14px]">Charleston Santa Teresa Cartagena</li>
-                  <li className="text-[14px]">Movich Cartagena De Indias</li>
+                  <li className="text-[14px]">{t('info.hotel.osh_cartagena', lang)}</li>
+                  <li className="text-[14px]">{t('info.hotel.casa_carolina', lang)}</li>
+                  <li className="text-[14px]">{t('info.hotel.charleston_santa_teresa', lang)}</li>
+                  <li className="text-[14px]">{t('info.hotel.movich_cartagena', lang)}</li>
                 </ul>
               </div>
 
               <div>
-                <p className="text-[16px] uppercase mb-2">barú:</p>
+                <p className="text-[16px] uppercase mb-2">{t('info.city.baru', lang)}</p>
                 <ul className="list-disc pl-6 space-y-1">
-                  <li className="text-[14px]">sofitel barú cartagena beach resort</li>
-                  <li className="text-[14px]">hotel las islas barú</li>
+                  <li className="text-[14px]">{t('info.hotel.sofitel_baru', lang)}</li>
+                  <li className="text-[14px]">{t('info.hotel.las_islas', lang)}</li>
                 </ul>
               </div>
             </div>
 
             <div className="pt-8">
               <p className="font-['Marcellus:Regular',sans-serif] leading-[16px] not-italic text-[#717070] text-[18px] tracking-[0.6px] uppercase mb-4">
-                coNTACTO:
+                {t('info.contact_title', lang)}
               </p>
               
-              <p className="font-['Marcellus:Regular',sans-serif] leading-[16px] text-[#717070] text-[14px] tracking-[0.6px] uppercase">
-                si tienes alguna pregunta <br />adicional
-                puedes escribirle <br />a nuestra wedding planner <br />
-                via whatsapp al <br />+ 573134423895
+              <p className="font-['Marcellus:Regular',sans-serif] leading-[16px] text-[#717070] text-[14px] tracking-[0.6px] uppercase whitespace-pre-line">
+                {t('info.contact_body', lang)}
               </p>
             </div>
           </div>
