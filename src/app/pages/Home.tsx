@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
-import imgScreenshot20260130At81615Pm1 from "figma:asset/f74998135538d1e201edcdd431ab6a90bfe63f4b.png";
 import { LanguageSwitcher } from '../components/LanguageSwitcher';
 import { useLanguage } from '../i18n/LanguageContext';
 import { t } from '../i18n/translations';
@@ -8,6 +7,7 @@ import { t } from '../i18n/translations';
 export default function Home() {
   const navigate = useNavigate();
   const { lang } = useLanguage();
+  const monogramImage = new URL("../../assets/f74998135538d1e201edcdd431ab6a90bfe63f4b.png", import.meta.url).href;
 
   return (
     <div className="bg-[#d4cfc4] min-h-screen w-full flex items-center justify-center px-4 sm:px-0" data-name="iPhone 16 - 59">
@@ -21,7 +21,7 @@ export default function Home() {
           <img
             alt="Nataly + David Monogram"
             className="w-full h-full object-cover pointer-events-none"
-            src={imgScreenshot20260130At81615Pm1}
+            src={monogramImage}
           />
         </div>
 

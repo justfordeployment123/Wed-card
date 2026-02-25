@@ -1,9 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 import svgPaths from "../../imports/svg-y7tj7flg0i";
-import imgImage2 from "figma:asset/27251f39d0450f1a4433b94d3242e8bdd4c78901.png";
-import imgScreenshot20260130At114747Pm1 from "figma:asset/83aca85b03199dd2bedb67b7c830ed52b44731ae.png";
-import imgScreenshot20260131At120634Am3 from "figma:asset/927db6088308ea87495ef7b202eeecb069579be0.png";
 import { LanguageSwitcher } from '../components/LanguageSwitcher';
 import { useLanguage } from '../i18n/LanguageContext';
 import { t } from '../i18n/translations';
@@ -47,13 +44,16 @@ function Group() {
 export default function Sabado() {
   const navigate = useNavigate();
   const { lang } = useLanguage();
+  const backgroundInvitation = new URL("../../assets/27251f39d0450f1a4433b94d3242e8bdd4c78901.png", import.meta.url).href;
+  const mailCardImage = new URL("../../assets/83aca85b03199dd2bedb67b7c830ed52b44731ae.png", import.meta.url).href;
+  const waxSealImage = new URL("../../assets/927db6088308ea87495ef7b202eeecb069579be0.png", import.meta.url).href;
 
   return (
     <div
-      className="min-h-screen w-full flex items-start justify-center bg-[#f1eee7] py-4 md:py-8"
-      style={{
-        minHeight: "1227px",
-        backgroundImage: `url(${imgImage2})`,
+             className="min-h-screen w-full flex items-start justify-center bg-[#f1eee7] py-4 md:py-8"
+             style={{
+               minHeight: "1227px",
+               backgroundImage: `url(${backgroundInvitation})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -72,7 +72,7 @@ export default function Sabado() {
           <div className="flex-none rotate-[-0.45deg]">
             <div className="h-[181.56px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] w-[275.582px]" data-name="Screenshot 2026-01-30 at 11.47.47 PM 1">
               <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <img alt="" className="absolute h-[100.6%] left-[-0.79%] max-w-none top-0 w-[100.8%]" src={imgScreenshot20260130At114747Pm1} />
+                       <img alt="" className="absolute h-[100.6%] left-[-0.79%] max-w-none top-0 w-[100.8%]" src={mailCardImage} />
               </div>
             </div>
           </div>
@@ -194,7 +194,7 @@ export default function Sabado() {
 
       <div className="absolute h-[61px] left-[154px] top-[529px] w-[91px]" data-name="Screenshot 2026-01-31 at 12.06.34 AM 3">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[61.54%] left-[25.63%] max-w-none top-[18.36%] w-[42.54%]" src={imgScreenshot20260131At120634Am3} />
+                   <img alt="" className="absolute h-[61.54%] left-[25.63%] max-w-none top-[18.36%] w-[42.54%]" src={waxSealImage} />
         </div>
       </div>
 
@@ -382,7 +382,7 @@ export default function Sabado() {
 
       <div className="absolute h-[61px] left-[178px] top-[179px] w-[91px]" data-name="Screenshot 2026-01-31 at 12.06.34 AM 2">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[61.54%] left-[25.63%] max-w-none top-[18.36%] w-[42.54%]" src={imgScreenshot20260131At120634Am3} />
+                   <img alt="" className="absolute h-[61.54%] left-[25.63%] max-w-none top-[18.36%] w-[42.54%]" src={waxSealImage} />
         </div>
       </div>
 

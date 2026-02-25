@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 import svgPaths from "../../imports/svg-6ik3w4qarz";
-import imgChatGptImage7Feb20262011332 from "figma:asset/029be0e6109999263a78b56bc4501195fc372211.png";
 import { LanguageSwitcher } from '../components/LanguageSwitcher';
 import { useLanguage } from '../i18n/LanguageContext';
 import { t } from '../i18n/translations';
@@ -43,13 +42,14 @@ function Icon() {
 export default function Domingo() {
   const navigate = useNavigate();
   const { lang } = useLanguage();
+  const sundayBackground = new URL("../../assets/029be0e6109999263a78b56bc4501195fc372211.png", import.meta.url).href;
 
   return (
     <div
       className="relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] min-h-screen w-full flex items-start justify-center px-4 sm:px-0 overflow-hidden"
       data-name="iPhone 16 - 61"
       style={{
-        backgroundImage: `url(${imgChatGptImage7Feb20262011332})`,
+        backgroundImage: `url(${sundayBackground})`,
         backgroundSize: "574px 861px",
         backgroundRepeat: "repeat",
         backgroundPosition: "left top",

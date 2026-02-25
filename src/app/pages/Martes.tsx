@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
-import imgChatGptImage8Feb20261818141 from "figma:asset/c250046851c2fab479fadf703de683c4333e3e4d.png";
 import { LanguageSwitcher } from '../components/LanguageSwitcher';
 import { useLanguage } from '../i18n/LanguageContext';
 import { t } from '../i18n/translations';
@@ -8,6 +7,7 @@ import { t } from '../i18n/translations';
 export default function Martes() {
   const navigate = useNavigate();
   const { lang } = useLanguage();
+  const wavesImage = new URL("../../assets/c250046851c2fab479fadf703de683c4333e3e4d.png", import.meta.url).href;
 
   return (
     <div className="bg-[#703d4e] min-h-screen w-full flex items-start justify-center px-4 sm:px-0 overflow-x-hidden">
@@ -303,7 +303,7 @@ export default function Martes() {
         {/* IMAGE SECTION – waves */}
         <img
           alt=""
-          src={imgChatGptImage8Feb20261818141}
+          src={wavesImage}
           style={{
             position: "absolute",
             width: 383,
@@ -316,7 +316,7 @@ export default function Martes() {
         />
         <img
           alt=""
-          src={imgChatGptImage8Feb20261818141}
+          src={wavesImage}
           style={{
             position: "absolute",
             width: 383,

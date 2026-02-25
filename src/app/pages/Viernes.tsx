@@ -1,7 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
-import imgChatGptImage7Feb20262015012 from "figma:asset/4ac89ba9da89237739c75c794c9238e066062519.png";
-import imgChatGptImage7Feb20262007013 from "figma:asset/7f28c756803ad49659645024dee4cc64b80c4ac0.png";
 import { LanguageSwitcher } from '../components/LanguageSwitcher';
 import { useLanguage } from '../i18n/LanguageContext';
 import { t } from '../i18n/translations';
@@ -9,13 +7,15 @@ import { t } from '../i18n/translations';
 export default function Viernes() {
   const navigate = useNavigate();
   const { lang } = useLanguage();
+  const backgroundPattern = new URL("../../assets/4ac89ba9da89237739c75c794c9238e066062519.png", import.meta.url).href;
+  const overlayTexture = new URL("../../assets/7f28c756803ad49659645024dee4cc64b80c4ac0.png", import.meta.url).href;
 
   return (
     <div
       className="relative min-h-screen w-full flex items-start justify-center px-4 sm:px-0 overflow-hidden"
       data-name="iPhone 16 - 63"
       style={{
-        backgroundImage: `url(${imgChatGptImage7Feb20262015012})`,
+        backgroundImage: `url(${backgroundPattern})`,
         backgroundSize: "574px 861px",
         backgroundRepeat: "repeat",
         backgroundPosition: "left top",
@@ -37,7 +37,7 @@ export default function Viernes() {
             top: "0px",
           }}
         >
-          <img alt="" className="w-full h-full object-cover" src={imgChatGptImage7Feb20262015012} />
+          <img alt="" className="w-full h-full object-cover" src={backgroundPattern} />
         </div>
         <div
           className="absolute"
@@ -48,7 +48,7 @@ export default function Viernes() {
             top: "861px",
           }}
         >
-          <img alt="" className="w-full h-full object-cover" src={imgChatGptImage7Feb20262015012} />
+          <img alt="" className="w-full h-full object-cover" src={backgroundPattern} />
         </div>
 
         {/* Overlay Images */}
@@ -62,7 +62,7 @@ export default function Viernes() {
             transform: "rotate(0.26deg)",
           }}
         >
-          <img alt="" className="w-full h-full object-cover" src={imgChatGptImage7Feb20262007013} />
+          <img alt="" className="w-full h-full object-cover" src={overlayTexture} />
         </div>
 
         <div
@@ -75,7 +75,7 @@ export default function Viernes() {
             transform: "rotate(0.26deg)",
           }}
         >
-          <img alt="" className="w-full h-full object-cover" src={imgChatGptImage7Feb20262007013} />
+          <img alt="" className="w-full h-full object-cover" src={overlayTexture} />
         </div>
 
         {/* Top \"inicio\" Button */}
