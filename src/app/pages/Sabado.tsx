@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router';
 import svgPaths from "../../imports/svg-y7tj7flg0i";
 import imgImage2 from "figma:asset/27251f39d0450f1a4433b94d3242e8bdd4c78901.png";
+import imgScreenshot20260130At114747Pm1 from "figma:asset/83aca85b03199dd2bedb67b7c830ed52b44731ae.png";
 import imgScreenshot20260131At120634Am3 from "figma:asset/927db6088308ea87495ef7b202eeecb069579be0.png";
 
 function Group() {
@@ -54,6 +55,19 @@ export default function Sabado() {
       }}
     >
       <div className="relative w-[393px] mx-auto -mt-6 md:-mt-10 origin-top md:scale-[1.2] lg:scale-[1.5]" data-name="iPhone 16 - 58">
+        {/* Mail icon card */}
+        <div
+          className="absolute flex h-[183.7px] items-center justify-center right-[10px] top-[90px] w-[276.987px]"
+          style={{ "--transform-inner-width": "1184.65625", "--transform-inner-height": "1152" } as React.CSSProperties}
+        >
+          <div className="flex-none rotate-[-0.45deg]">
+            <div className="h-[181.56px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] w-[275.582px]" data-name="Screenshot 2026-01-30 at 11.47.47 PM 1">
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <img alt="" className="absolute h-[100.6%] left-[-0.79%] max-w-none top-0 w-[100.8%]" src={imgScreenshot20260130At114747Pm1} />
+              </div>
+            </div>
+          </div>
+        </div>
       <div className="absolute flex h-[311.938px] items-center justify-center left-[26px] top-[202px] w-[239.544px]" style={{ "--transform-inner-width": "1184.65625", "--transform-inner-height": "154" } as React.CSSProperties}>
         <div className="flex-none rotate-[89.65deg]">
           <div className="h-[237.675px] relative w-[310.509px]">

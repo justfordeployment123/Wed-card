@@ -4,7 +4,7 @@ import imgChatGptImage7Feb20262011332 from "figma:asset/029be0e6109999263a78b56b
 
 function Icon() {
   return (
-    <div className="absolute h-[852px] left-[265px] top-0 w-[128px]" data-name="Icon">
+    <div className="absolute h-[852px] left-0 top-0 w-[128px]" data-name="Icon">
       <div className="absolute inset-[0_0_-0.94%_0]">
         <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 128 860">
           <g clipPath="url(#clip0_1_214)" filter="url(#filter0_d_1_214)" id="Icon" opacity="0.6">
@@ -40,46 +40,126 @@ export default function Domingo() {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-[#f5f4f0] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] min-h-screen w-full flex items-start justify-center px-4 sm:px-0 overflow-hidden" data-name="iPhone 16 - 61">
-      <div className="relative w-full max-w-[393px]">
-        {/* Background Image */}
-        <div className="absolute -left-[25px] -top-[16px] w-[calc(100%+50px)] h-[868px] pointer-events-none">
-          <img alt="" className="w-full h-full object-cover" src={imgChatGptImage7Feb20262011332} />
-        </div>
-
-        {/* Decorative Icon */}
+    <div
+      className="relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] min-h-screen w-full flex items-start justify-center px-4 sm:px-0 overflow-hidden"
+      data-name="iPhone 16 - 61"
+      style={{
+        backgroundImage: `url(${imgChatGptImage7Feb20262011332})`,
+        backgroundSize: "574px 861px",
+        backgroundRepeat: "repeat",
+        backgroundPosition: "left top",
+        backgroundColor: "#d4c4a8",
+      }}
+    >
+      {/* Warm golden overlay */}
+      <div 
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "linear-gradient(to bottom, rgba(232, 220, 198, 0.3), rgba(218, 195, 165, 0.2))",
+          mixBlendMode: "multiply",
+        }}
+      />
+      <div className="relative w-full max-w-[393px] z-10">
+        {/* Background Icon inside content frame */}
         <div className="absolute right-0 top-0 w-[128px] h-[852px] opacity-60 pointer-events-none">
           <Icon />
         </div>
 
         {/* Content */}
-        <div className="relative z-10 pt-8">
+        <div className="relative z-10">
+          {/* Inicio button (position can stay flexible) */}
           <button 
             onClick={() => navigate('/')}
-            className="px-6 py-2 bg-transparent border-2 border-[#717070] rounded-full text-[#717070] font-['Inter:Medium',sans-serif] text-[12px] tracking-[0.6px] uppercase cursor-pointer hover:bg-[#717070] hover:text-white transition-colors"
+            className="absolute px-6 py-2 bg-transparent border-2 border-[#717070] rounded-full text-[#717070] font-['Inter:Medium',sans-serif] text-[12px] tracking-[0.6px] uppercase cursor-pointer hover:bg-[#717070] hover:text-white transition-colors left-4 top-4"
           >
             inicio
           </button>
 
-          <div className="mt-[225px] space-y-4 px-4">
-            <p className="font-['Marcellus:Regular',sans-serif] leading-[16px] not-italic text-[#717070] text-[18px] tracking-[0.6px] uppercase">
-              tarde en la playa
-            </p>
+          {/* tarde en la playa */}
+          <p
+            className="absolute"
+            style={{
+              width: "246px",
+              height: "16px",
+              left: "64px",
+              top: "313px",
+              fontFamily: "Marcellus",
+              fontStyle: "normal",
+              fontWeight: 400,
+              fontSize: "18px",
+              lineHeight: "16px",
+              letterSpacing: "0.6px",
+              textTransform: "uppercase",
+              color: "#717070",
+            }}
+          >
+            tarde en la playa
+          </p>
 
-            <div className="font-['Marcellus:Regular',sans-serif] leading-[16px] not-italic text-[#717070] text-[16px] tracking-[0.6px] uppercase">
-              <p className="mb-0">domingo 12 de julio</p>
-              <p>3-6 pm</p>
-            </div>
-
-            <div className="font-['Lexend_Zetta:Regular',sans-serif] font-normal leading-[16px] text-[#717070] text-[12px] tracking-[0.6px] uppercase">
-              <p className="mb-0">SOFITEL BARÚ</p>
-              <p className="mb-0">cartagena BEACH RESORT</p>
-            </div>
-
-            <p className="font-['Marcellus:Regular',sans-serif] leading-[16px] not-italic text-[#717070] text-[16px] tracking-[0.6px] uppercase pt-4">
-              r.s.v.p.
-            </p>
+          {/* domingo 12 de julio 3-6 pm */}
+          <div
+            className="absolute"
+            style={{
+              width: "274px",
+              height: "32px",
+              left: "64px",
+              top: "355px",
+              fontFamily: "Marcellus",
+              fontStyle: "normal",
+              fontWeight: 400,
+              fontSize: "16px",
+              lineHeight: "16px",
+              letterSpacing: "0.6px",
+              textTransform: "uppercase",
+              color: "#717070",
+            }}
+          >
+            <p className="mb-0">domingo 12 de julio</p>
+            <p className="mb-0">3-6 pm</p>
           </div>
+
+          {/* SOFITEL BARÚ cartagena BEACH RESORT */}
+          <div
+            className="absolute"
+            style={{
+              width: "228px",
+              height: "80px",
+              left: "69px",
+              top: "413px",
+              fontFamily: "Lexend Zetta",
+              fontStyle: "normal",
+              fontWeight: 400,
+              fontSize: "12px",
+              lineHeight: "16px",
+              letterSpacing: "0.6px",
+              textTransform: "uppercase",
+              color: "#717070",
+            }}
+          >
+            <p className="mb-0">SOFITEL BARÚ</p>
+            <p className="mb-0">cartagena BEACH RESORT</p>
+          </div>
+
+          {/* r.s.v.p. */}
+          <p
+            className="absolute"
+            style={{
+              width: "274px",
+              height: "16px",
+              left: "71px",
+              top: "485px",
+              fontFamily: "Marcellus",
+              fontStyle: "normal",
+              fontWeight: 400,
+              fontSize: "16px",
+              lineHeight: "16px",
+              letterSpacing: "0.6px",
+              textTransform: "uppercase",
+              color: "#717070",
+            }}
+          >
+            r.s.v.p.
+          </p>
         </div>
       </div>
     </div>
