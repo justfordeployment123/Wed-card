@@ -13,7 +13,7 @@ export default function Martes() {
     <div className="bg-[#703d4e] min-h-screen w-full flex items-start justify-center px-4 sm:px-0 overflow-x-hidden">
       <div className="relative w-full max-w-[390px] md:max-w-[800px] lg:max-w-[1000px] h-[1800px] md:h-auto md:min-h-screen mx-auto md:py-8 md:px-8">
         {/* Language Switcher */}
-        <div className="absolute left-1/2 -translate-x-1/2 z-20 top-4 md:top-8">
+        <div className="absolute left-1/2 -translate-x-1/2 z-20 top-10 md:top-8">
           <LanguageSwitcher variant="light" />
         </div>
         
@@ -460,7 +460,7 @@ export default function Martes() {
           className="md:scale-150 lg:scale-200"
           style={{
             position: "absolute",
-            bottom: 20,
+            bottom: 80,
             left: -40,
             width: 160,
             height: 160,
