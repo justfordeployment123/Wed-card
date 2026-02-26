@@ -64,7 +64,47 @@ export default function Domingo() {
           mixBlendMode: "multiply",
         }}
       />
-      <div className="relative w-full max-w-[393px] z-10">
+      {/* ==================== DESKTOP LAYOUT ==================== */}
+      <div className="hidden md:flex flex-col min-h-screen w-full max-w-[1200px] mx-auto relative px-8 lg:px-16 z-10">
+        {/* Decorative Icon */}
+        <div className="absolute right-8 top-0 w-[128px] h-[852px] opacity-40 pointer-events-none">
+          <Icon />
+        </div>
+
+        {/* Top Bar */}
+        <div className="flex items-center justify-between pt-8 lg:pt-10 relative z-10">
+          <button
+            onClick={() => navigate('/')}
+            className="font-['Inter'] font-medium text-sm text-[#717070] uppercase tracking-wide hover:text-[#4a4a4a] transition-all duration-300"
+          >
+            {t('common.inicio', lang)}
+          </button>
+          <LanguageSwitcher />
+        </div>
+
+        {/* Centered Content */}
+        <div className="flex-1 flex items-center justify-center relative z-10">
+          <div className="flex flex-col items-center text-center space-y-6 lg:space-y-8">
+            <h2 className="font-['Marcellus'] text-3xl lg:text-4xl xl:text-5xl text-[#717070] uppercase tracking-wider">
+              {t('domingo.afternoon_at_beach', lang)}
+            </h2>
+            <div className="font-['Marcellus'] text-lg lg:text-xl text-[#717070] uppercase tracking-wide space-y-1">
+              <p className="mb-0">{t('domingo.date', lang)}</p>
+              <p className="mb-0">{t('domingo.time_range', lang)}</p>
+            </div>
+            <div className="font-['Lexend_Zetta'] text-sm lg:text-base text-[#717070] uppercase tracking-wide leading-relaxed">
+              <p className="mb-0">{t('domingo.sofitel_baru', lang).split(' ').slice(0, 2).join(' ')}</p>
+              <p className="mb-0">{t('domingo.sofitel_baru', lang).split(' ').slice(2).join(' ')}</p>
+            </div>
+            <p className="font-['Marcellus'] text-lg lg:text-xl text-[#717070] uppercase tracking-wide pt-2">
+              {t('common.rsvp', lang)}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* ==================== MOBILE LAYOUT ==================== */}
+      <div className="md:hidden relative w-full max-w-[393px] z-10">
         {/* Language Switcher */}
         <div className="absolute top-4 right-4 z-30">
           <LanguageSwitcher />
@@ -77,7 +117,7 @@ export default function Domingo() {
         {/* Content */}
         <div className="relative z-10">
           {/* Inicio button (position can stay flexible) */}
-          <button 
+          <button
             onClick={() => navigate('/')}
             className="absolute px-6 py-2 bg-transparent border-2 border-[#717070] rounded-full text-[#717070] font-['Inter:Medium',sans-serif] text-[12px] tracking-[0.6px] uppercase cursor-pointer hover:bg-[#717070] hover:text-white transition-colors left-4 top-4"
           >
