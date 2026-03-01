@@ -18,7 +18,7 @@ export default function Martes() {
         <div className="flex items-center justify-between pt-8 lg:pt-10 relative z-10">
           <button
             onClick={() => navigate('/')}
-            className="px-6 py-2 rounded-full border-2 border-white text-white font-['Inter'] font-medium text-sm uppercase tracking-wide hover:bg-white hover:text-[#703d4e] transition-all duration-300"
+            className="text-white font-['Inter'] font-medium text-sm uppercase tracking-wide hover:opacity-70 transition-opacity"
           >
             {t('common.inicio', lang)}
           </button>
@@ -108,17 +108,6 @@ export default function Martes() {
               >
                 {t('martes.location_padel', lang)}
               </p>
-              <div className="pt-4">
-                <a
-                  className="px-8 py-3 rounded-full border-2 border-white text-white font-['Inter'] font-medium text-sm uppercase tracking-wide hover:bg-white hover:text-[#703d4e] transition-all duration-300 inline-block"
-                  style={{ filter: "drop-shadow(0px 2px 6px rgba(0,0,0,0.25))" }}
-                  href="https://www.google.com/maps/place/Club+Campestre+El+Rancho/@4.7739038,-74.0445709,17z/data=!3m1!4b1!4m6!3m5!1s0x8e3f85ee67e30947:0x4029cac87f425c7d!8m2!3d4.7739038!4d-74.0445709!16s%2Fm%2F03ckkvp!5m1!1e4?entry=ttu&g_ep=EgoyMDI2MDIyMi4wIKXMDSoASAFQAw%3D%3D"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {t('common.go_to_place', lang).toUpperCase()}
-                </a>
-              </div>
             </div>
           </div>
         </div>
@@ -134,7 +123,7 @@ export default function Martes() {
       </div>
 
       {/* ==================== MOBILE LAYOUT ==================== */}
-      <div className="md:hidden relative w-full max-w-[390px] h-[1800px] mx-auto">
+      <div className="md:hidden relative w-full max-w-[390px] h-[1670px] mx-auto">
         {/* Language Switcher */}
         <div className="absolute left-1/2 -translate-x-1/2 z-20 top-10">
           <LanguageSwitcher variant="light" />
@@ -145,16 +134,8 @@ export default function Martes() {
           onClick={() => navigate('/')}
           className="absolute cursor-pointer hover:bg-white hover:text-[#703d4e] transition-all duration-300"
           style={{
-            width: 82,
-            height: 36,
             left: 16,
             top: 39,
-            borderRadius: 9999,
-            border: "2px solid #fff",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            boxSizing: "border-box",
           }}
         >
           <span
@@ -172,33 +153,18 @@ export default function Martes() {
           </span>
         </button>
 
-        {/* Decorative Top-Right L Graphic */}
-        <div
-          style={{
-            position: "absolute",
-            top: 60,
-            right: -40,
-            width: 160,
-            height: 160,
-          }}
-        >
-          <svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 20 H100 V110" stroke="white" strokeWidth="3" strokeLinecap="square" fill="none" />
-            <path d="M10 30 H90 V100" stroke="white" strokeWidth="3" strokeLinecap="square" fill="none" />
-            <path d="M0 40 H80 V90" stroke="white" strokeWidth="3" strokeLinecap="square" fill="none" />
-          </svg>
-        </div>
-
         {/* --- GIMNASIO SECTION --- */}
         <div
           style={{
             position: "absolute",
-            top: 310,
-            left: 122,
-            width: 155,
+            top: 220,
+            left: 0,
+            right: 0,
+            paddingLeft: 16,
+            paddingRight: 16,
             fontFamily: "Marcellus",
             fontSize: 18,
-            lineHeight: "16px",
+            lineHeight: "24px",
             letterSpacing: "0.6px",
             textTransform: "uppercase",
             textAlign: "center",
@@ -212,8 +178,11 @@ export default function Martes() {
         <div
           style={{
             position: "absolute",
-            top: 358,
-            left: 160,
+            top: 268,
+            left: 0,
+            right: 0,
+            paddingLeft: 16,
+            paddingRight: 16,
             fontFamily: "Marcellus",
             fontSize: 16,
             lineHeight: "16px",
@@ -230,9 +199,11 @@ export default function Martes() {
         <div
           style={{
             position: "absolute",
-            top: 383,
-            left: 71,
-            width: 248,
+            top: 293,
+            left: 0,
+            right: 0,
+            paddingLeft: 16,
+            paddingRight: 16,
             fontFamily: "Marcellus",
             fontSize: 16,
             lineHeight: "16px",
@@ -249,9 +220,11 @@ export default function Martes() {
         <div
           style={{
             position: "absolute",
-            top: 434,
-            left: 66,
-            width: 281,
+            top: 344,
+            left: 0,
+            right: 0,
+            paddingLeft: 16,
+            paddingRight: 16,
             fontFamily: "Lexend Zetta",
             fontSize: 12,
             lineHeight: "16px",
@@ -268,9 +241,11 @@ export default function Martes() {
         <div
           style={{
             position: "absolute",
-            top: 490,
-            left: 170,
-            width: 48,
+            top: 400,
+            left: 0,
+            right: 0,
+            paddingLeft: 16,
+            paddingRight: 16,
             fontFamily: "Marcellus",
             fontSize: 16,
             lineHeight: "16px",
@@ -288,7 +263,7 @@ export default function Martes() {
         <a
           style={{
             position: "absolute",
-            top: 1335,
+            top: 1205,
             left: 119,
             width: 151,
             height: 36,
@@ -327,7 +302,7 @@ export default function Martes() {
             position: "absolute",
             width: 383,
             height: 575,
-            top: 585,
+            top: 455,
             left: -33,
             transform: "rotate(89.92deg)",
             filter: "drop-shadow(0px 2px 6px rgba(0,0,0,0.25))",
@@ -340,40 +315,44 @@ export default function Martes() {
             position: "absolute",
             width: 383,
             height: 575,
-            top: 673,
+            top: 543,
             left: -11,
             transform: "rotate(89.92deg)",
             filter: "drop-shadow(0px 2px 6px rgba(0,0,0,0.25))",
           }}
         />
 
-        <div
+        <button
+          onClick={() => window.scrollTo({ top: 1000, behavior: 'smooth' })}
           style={{
             position: "absolute",
-            top: 699,
-            left: 319,
-            fontFamily: "Inter",
-            fontWeight: 500,
-            fontSize: 12,
-            lineHeight: "16px",
-            letterSpacing: "0.6px",
-            textTransform: "uppercase",
+            top: 560,
+            left: "50%",
+            transform: "translateX(-50%)",
+            background: "transparent",
+            border: "none",
+            cursor: "pointer",
             color: "#fff",
+            padding: 0,
           }}
         >
-          {t('martes.see_more', lang)}
-        </div>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9L12 15L18 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
 
         {/* PADEL SECTION */}
         <div
           style={{
             position: "absolute",
-            top: 1159,
-            left: 93,
-            width: 203,
+            top: 1029,
+            left: 0,
+            right: 0,
+            paddingLeft: 16,
+            paddingRight: 16,
             fontFamily: "Marcellus",
             fontSize: 18,
-            lineHeight: "16px",
+            lineHeight: "24px",
             letterSpacing: "0.6px",
             textTransform: "uppercase",
             textAlign: "center",
@@ -387,8 +366,11 @@ export default function Martes() {
         <div
           style={{
             position: "absolute",
-            top: 1198,
-            left: 160,
+            top: 1068,
+            left: 0,
+            right: 0,
+            paddingLeft: 16,
+            paddingRight: 16,
             fontFamily: "Marcellus",
             fontSize: 16,
             lineHeight: "16px",
@@ -404,9 +386,11 @@ export default function Martes() {
         <div
           style={{
             position: "absolute",
-            top: 1224,
-            left: 75,
-            width: 244,
+            top: 1094,
+            left: 0,
+            right: 0,
+            paddingLeft: 16,
+            paddingRight: 16,
             fontFamily: "Marcellus",
             fontSize: 16,
             lineHeight: "16px",
@@ -422,9 +406,11 @@ export default function Martes() {
         <div
           style={{
             position: "absolute",
-            top: 1268,
-            left: 56,
-            width: 281,
+            top: 1138,
+            left: 0,
+            right: 0,
+            paddingLeft: 16,
+            paddingRight: 16,
             fontFamily: "Lexend Zetta",
             fontSize: 12,
             lineHeight: "16px",
@@ -437,40 +423,6 @@ export default function Martes() {
           {t('martes.location_padel', lang)}
         </div>
 
-        {/* IR AL LUGAR button (Padel) */}
-        <a
-          style={{
-            position: "absolute",
-            top: 1381,
-            left: 132,
-            width: 126,
-            height: 36,
-            borderRadius: 9999,
-            border: "2px solid #fff",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            filter: "drop-shadow(0px 2px 6px rgba(0,0,0,0.25))",
-            textDecoration: "none",
-          }}
-          href="https://www.google.com/maps/place/Club+Campestre+El+Rancho/@4.7739038,-74.0445709,17z/data=!3m1!4b1!4m6!3m5!1s0x8e3f85ee67e30947:0x4029cac87f425c7d!8m2!3d4.7739038!4d-74.0445709!16s%2Fm%2F03ckkvp!5m1!1e4?entry=ttu&g_ep=EgoyMDI2MDIyMi4wIKXMDSoASAFQAw%3D%3D"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span
-            style={{
-              fontFamily: "Inter",
-              fontWeight: 500,
-              fontSize: 12,
-              lineHeight: "16px",
-              letterSpacing: "0.6px",
-              textTransform: "uppercase",
-              color: "rgba(255,255,255,0.7)",
-            }}
-          >
-            {t('common.go_to_place', lang).toUpperCase()}
-          </span>
-        </a>
 
         {/* Decorative Bottom-Left L Graphic (mirrored) */}
         <div

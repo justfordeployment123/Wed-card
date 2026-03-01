@@ -119,7 +119,7 @@ export default function Info() {
         <div className="relative z-10 pt-6">
           <button
             onClick={() => navigate('/')}
-            className="px-6 py-2 bg-transparent border-2 border-[#717070] rounded-full text-[#717070] font-['Inter:Medium',sans-serif] text-[12px] tracking-[0.6px] uppercase cursor-pointer hover:bg-[#717070] hover:text-white transition-colors mb-8"
+            className="bg-transparent text-[#717070] font-['Inter:Medium',sans-serif] text-[12px] tracking-[0.6px] uppercase cursor-pointer hover:opacity-70 transition-opacity mb-8"
           >
             {t('common.inicio', lang)}
           </button>

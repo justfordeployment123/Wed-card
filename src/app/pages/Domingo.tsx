@@ -119,7 +119,7 @@ export default function Domingo() {
           {/* Inicio button (position can stay flexible) */}
           <button
             onClick={() => navigate('/')}
-            className="absolute px-6 py-2 bg-transparent border-2 border-[#717070] rounded-full text-[#717070] font-['Inter:Medium',sans-serif] text-[12px] tracking-[0.6px] uppercase cursor-pointer hover:bg-[#717070] hover:text-white transition-colors left-4 top-4"
+            className="absolute bg-transparent text-[#717070] font-['Inter:Medium',sans-serif] text-[12px] tracking-[0.6px] uppercase cursor-pointer hover:opacity-70 transition-opacity left-4 top-4"
           >
             {t('common.inicio', lang)}
           </button>

@@ -70,8 +70,8 @@ export default function Sabado() {
       </div>
 
       {/* ==================== INVITATION CARD ==================== */}
-      <div className="flex-1 flex items-start justify-center w-full py-4 md:py-2">
-      <div className="relative w-[393px] mx-auto -mt-6 md:-mt-2 origin-top md:scale-[1.4] lg:scale-[1.7] xl:scale-[1.9]" style={{ height: "850px" }} data-name="iPhone 16 - 58">
+      <div className="flex-1 flex items-start justify-center w-full pt-0 pb-4 md:py-2">
+      <div className="relative w-[393px] mx-auto mt-0 md:-mt-2 origin-top md:scale-[1.4] lg:scale-[1.7] xl:scale-[1.9]" style={{ height: "850px" }} data-name="iPhone 16 - 58">
         {/* Language Switcher - mobile only */}
         <div className="absolute top-4 right-4 z-20 md:hidden">
           <LanguageSwitcher />
@@ -145,7 +145,7 @@ export default function Sabado() {
       </p>
 
       <p
-        className="absolute bg-clip-text h-[12px] leading-[12px] left-[82px] not-italic text-[17px] text-transparent text-center top-[292px] w-[127px] whitespace-pre-wrap"
+        className="absolute bg-clip-text h-auto leading-[24px] left-[62px] not-italic text-[17px] text-transparent text-center top-[288px] w-[170px] whitespace-pre-wrap"
         style={{
           backgroundImage:
             "linear-gradient(0deg, rgba(131, 87, 65, 0.2), rgba(131, 87, 65, 0.2)), linear-gradient(0deg, #5D3727 -46.48%, #835741 -2.63%, #46281B 27.86%, #704734 27.89%, #FAE2CC 48.19%, #775949 64.71%)",
@@ -392,7 +392,7 @@ export default function Sabado() {
         </div>
       </button>
 
-      <div className="absolute h-[61px] left-[178px] top-[139px] w-[91px]" data-name="Screenshot 2026-01-31 at 12.06.34 AM 2">
+      <div className="absolute h-[61px] left-[205px] top-[148px] w-[91px]" data-name="Screenshot 2026-01-31 at 12.06.34 AM 2">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
                    <img alt="" className="absolute h-[61.54%] left-[25.63%] max-w-none top-[18.36%] w-[42.54%]" src={waxSealImage} />
         </div>

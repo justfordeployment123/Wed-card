@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <div className="bg-[#d4cfc4] min-h-screen w-full flex items-center justify-center px-4 sm:px-0" data-name="iPhone 16 - 59">
-      <div className="relative w-full max-w-[393px] md:max-w-[520px] lg:max-w-[600px] flex flex-col items-center py-20 md:py-28 lg:py-32 space-y-8 md:space-y-10 lg:space-y-12">
+      <div className="relative w-full max-w-[393px] md:max-w-[520px] lg:max-w-[600px] flex flex-col items-center pt-40 pb-20 md:py-28 lg:py-32 space-y-8 md:space-y-10 lg:space-y-12">
         {/* Language Switcher */}
         <div className="absolute top-4 right-4 md:top-8 md:right-0 lg:top-10 z-20">
           <LanguageSwitcher />
